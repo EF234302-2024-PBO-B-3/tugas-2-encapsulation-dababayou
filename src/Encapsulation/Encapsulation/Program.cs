@@ -3,11 +3,13 @@ using Encapsulation.Employment;
 using System;
 using Encapsulation.Calendar;
 using Encapsulation.Banking;
+using Encapsulation.Extra;
 
 namespace Encapsulation;
 
 public class Program
 {
+
     static void Main(string[] args)
     {
         // Invoicing
@@ -53,6 +55,21 @@ public class Program
         Console.WriteLine($"Balance after withdrawal: {account.GetBalance()}");
 
         // Extra
+        SmartDevice myPhone = new("MyPhone", 64.0);
 
+        myPhone.GetDeviceStatus();
+        myPhone.TurnOn();
+
+        myPhone.UseMemory(10.0);
+        myPhone.UseMemory(5.0);
+
+        myPhone.ChargeBattery(10.0);
+        myPhone.GetDeviceStatus();
+
+        myPhone.DrainBattery(30.0);
+        myPhone.GetDeviceStatus();
+
+        myPhone.TurnOff();
+        myPhone.GetDeviceStatus();
     }
 }
